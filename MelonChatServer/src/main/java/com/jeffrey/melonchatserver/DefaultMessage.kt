@@ -19,6 +19,7 @@ object ArtistFixedMessage : ServerMessage() // 에러 발생시 메세지
 object NoticeMessage : ServerMessage()      // 흘러가는 공지사항 메세지
 
 object CustomMessage : ServerMessage()      // 흘러가는 공지사항 메세지
+object CustomNoticeMessage : ServerMessage()      // 흘러가는 공지사항 메세지
 
 fun ServerMessage.getJSonMessage(message: String? = null): String {
     return when (this) {
@@ -131,6 +132,17 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
             {
               "id": 9900012121212122,
               "type": "NOTICE_MESSAGE",
+              "message": "공지사항은 이렇고 저렇습니다",
+              "actionTitle": "타이틀",
+              "actionUrl": "https://www.kakaoent.com",
+              "createdDt": "2022-04-25T14:00:00+09:00"
+            }
+        """.trimIndent()
+
+        is CustomNoticeMessage -> """
+            {
+              "id": 9900012121212122,
+              "type": ${message},
               "message": "공지사항은 이렇고 저렇습니다",
               "actionTitle": "타이틀",
               "actionUrl": "https://www.kakaoent.com",

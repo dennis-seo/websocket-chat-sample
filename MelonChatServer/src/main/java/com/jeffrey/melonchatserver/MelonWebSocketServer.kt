@@ -75,7 +75,7 @@ class MelonWebSocketServer : WebSocketServer {
 
     override fun onError(conn: WebSocket?, ex: Exception?) {
         println("Melon Chat Server Error!! : $ex")
-        chatServerListener?.onMessage("onError() : Melon Chat Server Error!! - $ex")
+        chatServerListener?.onMessage("exception : $ex")
 //        Log.i(TAG, "Melon Chat Server Error!! : $ex")
     }
 
