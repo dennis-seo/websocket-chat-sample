@@ -45,9 +45,6 @@ class MainFragment : Fragment() {
             if(::chatAdapter.isInitialized) {
                 Log.d(TAG, "updateMessageList()")
                 chatAdapter.recyclerViewItems = messages
-                chatAdapter.notifyDataSetChanged()
-            } else {
-                Log.d(TAG, "chatAdapter is not init")
             }
         })
 

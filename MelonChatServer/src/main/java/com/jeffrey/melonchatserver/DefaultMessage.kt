@@ -1,5 +1,7 @@
 package com.jeffrey.melonchatserver
 
+import kotlin.random.Random
+
 
 /*
 * Copyright (C) 2022 Kakao corp. All rights reserved.
@@ -25,7 +27,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
     return when (this) {
         is InitMessage -> """
             {
-              "id": 9900023671212122,
+              "id": ${Random(9900023675678122)},
               "type": "INIT_MESSAGE",
               "roomId": 9900023675678122,
               "chatMeta": {
@@ -62,7 +64,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is UserMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": "USER_MESSAGE",
               "rawMessage": "너 내가 걸리면 죽여 버릴꺼야~ 개새끼야!",
               "message": "너 내가 걸리면 <blind>죽여</blind> 버릴꺼야~ <swear>개새끼</swear>야!",
@@ -80,7 +82,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is UserFixedMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": "USER_MESSAGE",
               "rawMessage": "너 내가 걸리면 죽여 버릴꺼야~ 개새끼야!",
               "message": "너 내가 걸리면 <blind>죽여</blind> 버릴꺼야~ <swear>개새끼</swear>야!",
@@ -98,7 +100,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is ArtistMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": "ARTIST_MESSAGE",
               "message": "여러분 모두 안녕하세요~",
               "sentTime": "2022-04-25T14:00:00+09:00",
@@ -114,7 +116,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is ArtistFixedMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": "ARTIST_FIXED_MESSAGE",
               "message": "여러분 모두 안녕하세요~",
               "sentTime": "2022-04-25T14:00:00+09:00",
@@ -130,7 +132,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is NoticeMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": "NOTICE_MESSAGE",
               "message": "공지사항은 이렇고 저렇습니다",
               "actionTitle": "타이틀",
@@ -141,7 +143,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is CustomNoticeMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": ${message},
               "message": "공지사항은 이렇고 저렇습니다",
               "actionTitle": "타이틀",
@@ -152,7 +154,7 @@ fun ServerMessage.getJSonMessage(message: String? = null): String {
 
         is CustomMessage -> """
             {
-              "id": 9900012121212122,
+              "id": ${Random(9900023675678122)},
               "type": "USER_MESSAGE",
               "rawMessage": "너 내가 걸리면 죽여 버릴꺼야~ 개새끼야!",
               "message": ${message},

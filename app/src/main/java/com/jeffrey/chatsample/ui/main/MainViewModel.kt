@@ -62,14 +62,14 @@ class MainViewModel : ViewModel() {
                     Log.d(TAG, "onMessage : ${messageItem.type}")
 
                 }
-                val temp = _messageList.value
-                if(temp == null) {
+                if(_messageList.value == null) {
                     Log.d(TAG, "temp is null")
                     _messageList.postValue(ArrayList(messageItems))
                 } else {
                     Log.d(TAG, "temp is not null")
-                    temp.addAll(messageItems)
-                    _messageList.postValue(temp!!)
+                    val newList = ArrayList(_messageList.value!!)
+                    newList.addAll(messageItems)
+                    _messageList.postValue(newList)
                 }
             }
 
